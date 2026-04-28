@@ -259,6 +259,49 @@
       text-align: left;
     }
 
+    /* ORG */
+    .org-section { background: var(--cream); }
+    .org-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    @media (max-width: 680px) { .org-grid { grid-template-columns: 1fr; gap: 48px; } }
+    .org-opener {
+      font-size: clamp(24px, 3.5vw, 34px);
+      font-weight: normal;
+      line-height: 1.3;
+      margin-bottom: 32px;
+      color: var(--dark);
+    }
+    .org-body { font-size: 17px; color: var(--mid); line-height: 1.8; }
+    .org-body p { margin-bottom: 20px; }
+    .org-list { list-style: none; margin-top: 40px; }
+    .org-list li {
+      padding: 14px 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--mid);
+      border-bottom: 1px solid var(--rule);
+    }
+    .org-list li:last-child { border-bottom: none; }
+    .org-cta-wrap { margin-top: 48px; }
+    .org-cta {
+      display: inline-block;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 3px;
+    }
+    .org-cta:hover { opacity: 0.6; }
+    .org-note {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
     /* TEAM */
     .pullquote {
       font-size: clamp(20px, 3vw, 28px);
@@ -397,26 +440,26 @@
 
 <!-- PHASES -->
 <section class="wide">
-  <span class="label" style="text-align:center; display:block;">The Shape of the Experience</span>
-  <p class="phases-intro">One in-person foundation. Three quarterly studios. A year of real work.</p>
+  <span class="label" style="text-align:center; display:block;">The Shape of the Year</span>
+  <p class="phases-intro">Three phases. Forty weeks. One cohort of eight.</p>
   <div class="phases">
     <div class="phase">
-      <p class="phase-num">The Foundation</p>
+      <p class="phase-num">Phase One &nbsp;·&nbsp; The Inhale</p>
+      <p class="phase-name">Foundation</p>
+      <p>Four weeks of async preparation before you arrive. You begin building your workspace, working through the foundational material, and doing the quiet work of becoming legible to yourself. No calls. No performance. Just honest preparation.</p>
+      <p class="phase-meta">4 weeks &nbsp;·&nbsp; Async</p>
+    </div>
+    <div class="phase">
+      <p class="phase-num">Phase Two &nbsp;·&nbsp; The Concert</p>
       <p class="phase-name">In-Person Intensive</p>
-      <p>Where it begins. You come together in person to learn the conceptual framework — not the technology first, but the thinking behind it. Concepts, principles, philosophy. You leave knowing what you're building and why.</p>
-      <p class="phase-meta">Once &nbsp;·&nbsp; In person</p>
+      <p>Five days together. Eight people. Two facilitators. This is where the internal work meets the relational work — where you stop thinking about your operating system and start living inside it. Immersive. Unhurried. The centerpiece of the year.</p>
+      <p class="phase-meta">5 days &nbsp;·&nbsp; In person &nbsp;·&nbsp; 8 people</p>
     </div>
     <div class="phase">
-      <p class="phase-num">The Ongoing Practice</p>
-      <p class="phase-name">Quarterly Studio</p>
-      <p>Three times a year, the cohort returns to reflect, iterate, and grow. Your OS evolves because you do — and because the world does too. This is where the work stays alive. Held digitally, with full presence.</p>
-      <p class="phase-meta">Three times a year &nbsp;·&nbsp; Digital</p>
-    </div>
-    <div class="phase">
-      <p class="phase-num">The Practice Ground</p>
-      <p class="phase-name">Attunement Camps</p>
-      <p>Where sovereignty stops being a concept and starts being something you live — in your body, around other people living in theirs. Practice operating from your own system. Experience what it feels like in relationship.</p>
-      <p class="phase-meta">Ongoing &nbsp;·&nbsp; In person</p>
+      <p class="phase-num">Phase Three &nbsp;·&nbsp; The Exhale</p>
+      <p class="phase-name">Integration</p>
+      <p>Twelve weeks of supported practice. Weekly async touchpoints to keep the work alive. Monthly live calls with your cohort. Two 1:1 integration sessions — one with Nicki, one with Kat. The retreat is the beginning, not the event.</p>
+      <p class="phase-meta">12 weeks &nbsp;·&nbsp; Async + live &nbsp;·&nbsp; Two 1:1s</p>
     </div>
   </div>
 </section>
@@ -471,6 +514,37 @@
 
 <div class="divider"></div>
 
+<!-- ORGANIZATIONS -->
+<section class="wide org-section">
+  <span class="label">For Organizations</span>
+  <div class="org-grid">
+    <div>
+      <p class="org-opener">The real obstacle to AI adoption is not the technology. It's the people leading it.</p>
+      <div class="org-body">
+        <p>89% of managers believe their people are thriving. The actual figure is 24%. That gap — between what leaders believe and what employees experience — is where AI investments go to die.</p>
+        <p>The AOS can be structured for leadership cohorts and executive teams who want to close that gap. Not with a framework. With the actual work — done together, inside a coherent practice.</p>
+        <p>When multiple people in the same organization build sovereign AI systems from their real values, coherence is no longer enforced from the top. It emerges from the inside.</p>
+      </div>
+    </div>
+    <div>
+      <span class="for-col-label">Organizations come to us when</span>
+      <ul class="org-list">
+        <li>AI investments are stalling and the problem is clearly not the technology</li>
+        <li>They want a leadership team that can navigate uncertainty without defaulting to fear or false urgency</li>
+        <li>Culture alignment is aspirational — not lived — and everyone knows it</li>
+        <li>They are scaling and need the humans to scale with it, not after it</li>
+        <li>They want people who can lead AI because they lead themselves first</li>
+      </ul>
+      <div class="org-cta-wrap">
+        <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=AOS%20%E2%80%94%20Organization%20Inquiry&body=Hi%20Nicki%20and%20Kat%2C%0A%0AOrganization%20name%3A%0A%0AWhat%20we%27re%20working%20with%3A%0A%0ASize%20of%20group%20we%27re%20considering%3A%0A%0AWhat%20resonated%3A%0A%0A" class="org-cta">Inquire for your team</a>
+        <p class="org-note">Custom delivery available for groups of 4–12.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- TEAM -->
 <section class="wide">
   <p class="pullquote">"The deepest form of teaching is really just watching someone become more themselves."</p>
@@ -500,6 +574,7 @@
   <p class="cta-recognition">If you felt something reading this — a quiet recognition — you're probably our person.</p>
   <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=AOS%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="cta-button">Apply</a>
   <p class="cta-note">2027 Intensives: Jan 25–29 &nbsp;·&nbsp; Apr 26–30 &nbsp;·&nbsp; Jun 21–25 &nbsp;·&nbsp; Oct 25–29</p>
+  <p class="cta-note" style="margin-top: 24px; opacity: 0.7;"><a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=AOS%20%E2%80%94%20Organization%20Inquiry&body=Hi%20Nicki%20and%20Kat%2C%0A%0AOrganization%20name%3A%0A%0AWhat%20we%27re%20working%20with%3A%0A%0ASize%20of%20group%20we%27re%20considering%3A%0A%0AWhat%20resonated%3A%0A%0A" style="color: rgba(247,244,239,0.65); text-decoration: none; border-bottom: 1px solid rgba(247,244,239,0.4);">Inquiring for an organization? Different conversation — same email.</a></p>
 </div>
 
 </main>
