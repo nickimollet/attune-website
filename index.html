@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attune — Sovereignty is a practice.</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* HOME-SPECIFIC */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 48px 96px;
+      max-width: 100%;
+    }
+    .hero-tag {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+    .hero h1 { max-width: 900px; }
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 36px;
+      max-width: 480px;
+    }
+
+    /* PHILOSOPHY */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 56px;
+    }
+    @media (max-width: 680px) { .philosophy-grid { grid-template-columns: 1fr; } }
+    .philosophy-card {
+      background: var(--cream);
+      padding: 52px 44px;
+    }
+    .philosophy-card .card-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      display: block;
+    }
+    .philosophy-card h3 { font-size: 26px; margin-bottom: 20px; }
+    .philosophy-card p { font-size: 16px; color: var(--mid); line-height: 1.75; }
+
+    /* OFFERS */
+    .offers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+      margin-top: 56px;
+    }
+    @media (max-width: 800px) { .offers-grid { grid-template-columns: 1fr; } }
+    .offer-card {
+      padding: 52px 44px;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+    }
+    .offer-card.featured { background: var(--dark); color: var(--cream); }
+    .offer-card .offer-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: block;
+    }
+    .offer-card.featured .offer-label { color: rgba(247,244,239,0.4); }
+    .offer-card h3 { font-size: 24px; margin-bottom: 16px; }
+    .offer-card p { font-size: 15px; color: var(--mid); line-height: 1.7; flex-grow: 1; }
+    .offer-card.featured p { color: rgba(247,244,239,0.7); }
+    .offer-price {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-top: 32px;
+    }
+    .offer-card.featured .offer-price { color: rgba(247,244,239,0.4); }
+    .offer-link {
+      display: inline-block;
+      margin-top: 28px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--accent);
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
+    .offer-card.featured .offer-link { color: rgba(247,244,239,0.7); border-color: rgba(247,244,239,0.3); }
+    .offer-link:hover { opacity: 0.6; }
+
+    /* TEAM STRIP */
+    .team-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 56px;
+    }
+    @media (max-width: 640px) { .team-strip { grid-template-columns: 1fr; gap: 48px; } }
+    .team-strip .name { font-size: 22px; margin-bottom: 4px; }
+    .team-strip .title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .team-strip p { font-size: 16px; color: var(--mid); line-height: 1.75; }
+    .team-strip a {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+    }
+
+    /* STATS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 64px;
+    }
+    @media (max-width: 700px) { .stats-grid { grid-template-columns: 1fr; } }
+    .stat-block {
+      padding: 52px 44px;
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-num {
+      font-size: clamp(64px, 8vw, 96px);
+      font-family: 'Georgia', serif;
+      font-weight: normal;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+    .stat-label {
+      font-size: 16px;
+      color: var(--mid);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+    .stat-source {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+    .stats-note {
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-style: italic;
+      color: var(--mid);
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="20" viewBox="0 0 14 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 1v10q0 4.5 4 4.5q4 0 4-4.5v-10"/><line x1="7" y1="15.5" x2="7" y2="21"/></svg>Attune</a>
+  <div class="nav-links">
+    <a href="#work">Services</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="about.html">About</a>
+    <a href="apply.html" class="cta">Apply</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<main id="main-content">
+<div class="hero">
+  <p class="hero-tag">Attune Coaching Group</p>
+  <h1>Sovereignty<br>is a practice.</h1>
+  <p class="hero-sub">What is AI is no longer the question. How you live with it — on your own terms — is.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- PHILOSOPHY -->
+<section class="wide">
+  <span class="label">The Philosophy</span>
+  <p style="font-size: 20px; color: var(--mid); max-width: 600px; font-style: italic;">What is AI is no longer the question. How you live alongside it — clearly, on your own terms, without getting carried by someone else's agenda — that's the question. This is one clear action step toward a different relationship with technology. And with yourself.</p>
+  <div class="philosophy-grid">
+    <div class="philosophy-card">
+      <span class="card-label">Sit with the discomfort</span>
+      <h3>The fear is real. So is the opportunity.</h3>
+      <p>Most people react from fear or rush to adopt without thinking. Neither is agency. Attune is a third way — honest, unhurried, grounded in who you actually are.</p>
+    </div>
+    <div class="philosophy-card">
+      <span class="card-label">Find your footing</span>
+      <h3>You attune first.</h3>
+      <p>You learn how you operate — your values, your judgment, your way of being. Not aspirationally. From what you've actually lived. That's your operating system. It updates as you do.</p>
+    </div>
+    <div class="philosophy-card">
+      <span class="card-label">Get your agency</span>
+      <h3>Then you build AI that reflects exactly that.</h3>
+      <p>You don't adapt to the technology. The technology adapts to you. AI trained on your values, your voice, your way of moving through the world. You lead. It follows.</p>
+    </div>
+    <div class="philosophy-card">
+      <span class="card-label">Go forward, together</span>
+      <h3>You don't do this alone.</h3>
+      <p>A community of people doing the same honest work. Learning, iterating, growing — in relationship with each other and with themselves. This is not a solo journey.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- OFFERS -->
+<section class="wide" id="work">
+  <span class="label">Services</span>
+  <div class="offers-grid">
+    <div class="offer-card featured">
+      <span class="offer-label">Flagship &nbsp;·&nbsp; Quarterly Membership</span>
+      <h3>AOS</h3>
+      <span class="offer-subtitle">The Attuned Operating System</span>
+      <p>You attune first. You come to know yourself — your values, your judgment, the way you operate. Then you build AI that serves exactly that. You lead. It follows.</p>
+      <span class="offer-price">Founding year &nbsp;·&nbsp; Apply</span>
+      <a href="aos.html" class="offer-link">Learn more</a>
+    </div>
+    <div class="offer-card">
+      <span class="offer-label">In-Person &nbsp;·&nbsp; Ongoing</span>
+      <h3>Attunement Camps</h3>
+      <p>Where sovereignty stops being a concept and starts being something you live — in your body, around other people living in theirs. Practice. Presence. Relationship.</p>
+      <span class="offer-price">Details on request</span>
+      <a href="camps.html" class="offer-link">Learn more</a>
+    </div>
+    <div class="offer-card">
+      <span class="offer-label">Course &nbsp;·&nbsp; Self-Paced</span>
+      <h3>The Sovereign OS</h3>
+      <p>The philosophy and practice of Attune — taught as a course for people ready to meet AI on their own terms.</p>
+      <span class="offer-price">Almost ready to launch &nbsp;·&nbsp; Join the list</span>
+      <a href="course.html" class="offer-link">Learn more</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DATA -->
+<section class="wide">
+  <div class="stats-grid">
+    <div class="stat-block">
+      <span class="stat-num">89%</span>
+      <span class="stat-label">of managers say their people are thriving. The actual figure: 24%.</span>
+      <span class="stat-source">Harris Poll / LinkedIn, 2024</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num">70–85%</span>
+      <span class="stat-label">of AI initiatives fail to meet expected outcomes</span>
+      <span class="stat-source">Fullview, 2025 AI Adoption Research</span>
+    </div>
+    <div class="stat-block">
+      <span class="stat-num">70%</span>
+      <span class="stat-label">of AI implementation challenges are people- and process-related — not the technology</span>
+      <span class="stat-source">Boston Consulting Group, 2024</span>
+    </div>
+  </div>
+  <p class="stats-note">This is not a technology problem. It is an internal problem that technology will amplify.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- TEAM -->
+<section class="wide">
+  <span class="label">Who We Are</span>
+  <div class="team-strip">
+    <div>
+      <p class="name">Nicki Mollet</p>
+      <p class="title">M.Ed. &nbsp;·&nbsp; Partner</p>
+      <p>From the plains of South Dakota to eleven years leading schools in Santiago, Chile — Nicki has spent twenty years watching people become more themselves. Her methodology is relational and somatic. She believes belonging is the precondition for everything else.</p>
+      <a href="about.html">Full bio — Nicki Mollet</a>
+    </div>
+    <div>
+      <p class="name">Kathryn Snyder</p>
+      <p class="title">PCC, CPCC &nbsp;·&nbsp; Founder</p>
+      <p>Two decades in corporate America — engineering, operations, people leadership at E*Trade and Capital One. Two burnouts. One honest question: <em>what's dying while I'm busy succeeding?</em> That question built Attune. She believes aliveness is the map.</p>
+      <a href="about.html">Full bio — Kathryn Snyder</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <span class="label">Ready to Begin</span>
+  <p>You don't need to have it figured out. You need to be willing to go forward — clearly, honestly, together.</p>
+  <p style="font-style: italic; font-size: 18px;">If you felt something reading this — a quiet recognition — you're probably our person.</p>
+  <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=AOS%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="btn btn-light">Apply for the AOS</a>
+  <p class="note"><a href="calendar.html" style="color: rgba(247,244,239,0.65); text-decoration: none; border-bottom: 1px solid rgba(247,244,239,0.4);">View full calendar</a></p>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span style="display:inline-flex;align-items:center;gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="18" viewBox="0 0 14 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 1v10q0 4.5 4 4.5q4 0 4-4.5v-10"/><line x1="7" y1="15.5" x2="7" y2="21"/></svg>Attune Coaching Group</span>
+  <div style="display:flex; gap: 32px;">
+    <a href="aos.html">AOS</a>
+    <a href="camps.html">Camps</a>
+    <a href="course.html">Course</a>
+    <a href="about.html">About</a>
+    <a href="apply.html">Apply</a>
+  </div>
+  <span>attunecoachinggroup.com</span>
+</footer>
+
+</body>
+</html>

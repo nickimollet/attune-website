@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sovereign OS — Attune</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero { padding: 180px 48px 96px; max-width: var(--max); margin: 0 auto; }
+    .page-hero h1 { margin-bottom: 32px; }
+    .page-hero p { font-size: 20px; color: var(--mid); font-style: italic; }
+    .interest-form { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .interest-form input[type="text"],
+    .interest-form input[type="email"] {
+      background: rgba(247,244,239,0.12);
+      border: 1px solid rgba(247,244,239,0.25);
+      color: var(--cream);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      padding: 16px 20px;
+      width: 100%;
+      outline: none;
+    }
+    .interest-form input::placeholder { color: rgba(247,244,239,0.6); }
+    .interest-form button {
+      background: var(--cream);
+      color: var(--dark);
+      border: none;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 20px 40px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: 8px;
+    }
+    .interest-form button:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav aria-label="Main navigation">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="20" viewBox="0 0 14 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 1v10q0 4.5 4 4.5q4 0 4-4.5v-10"/><line x1="7" y1="15.5" x2="7" y2="21"/></svg>Attune</a>
+  <div class="nav-links">
+    <a href="index.html#work">Services</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="about.html">About</a>
+    <a href="apply.html" class="cta">Apply</a>
+  </div>
+</nav>
+
+<main id="main-content">
+<div class="page-hero">
+  <span class="label">The Sovereign OS &nbsp;·&nbsp; Course</span>
+  <h1>The internal work first.</h1>
+  <p>The philosophy and practice of Attune — taught as a course for people ready to meet AI on their own terms.</p>
+</div>
+
+<div class="divider"></div>
+
+<section>
+  <span class="label">What This Is</span>
+  <p style="font-size: 22px; font-style: italic; color: var(--mid); margin-bottom: 40px;">Not a tech course. A philosophy and practice course. The tech is the easy part. The hard part — the part worth teaching — is how to think about this.</p>
+  <p>There are thousands of AI courses. None of them start from the question: <em>how do I make AI feel like an extension of me, not a replacement for me?</em></p>
+  <p>The Sovereign OS does.</p>
+  <p>You attune first. You build a personal operating system grounded in your actual values, your real experience, your honest relationship with what you know and don't know. Then you build AI that reflects exactly that. You lead. It follows.</p>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <span class="label">What You'll Build</span>
+  <ul class="dashed">
+    <li>Clarity on how you operate, what you need, where you're growing, and how you grow</li>
+    <li>A personal OS built from your actual lived experience — not ideals or aspirations</li>
+    <li>An understanding of agentic AI that starts from sovereignty, not productivity</li>
+    <li>The conceptual foundation to build your own AI system after the course</li>
+  </ul>
+</section>
+
+<div class="divider"></div>
+
+<div class="cta-section">
+  <span class="label">Join the List</span>
+  <p>The Sovereign OS is almost ready to launch. Join the interest list and you'll hear first — with early access and founding pricing.</p>
+  <p style="font-style: italic; font-size: 18px;">This is for people ready to take one clear action step toward a different relationship with technology. And with themselves.</p>
+  <form name="sovereign-os-interest" method="POST" action="/course.html" data-netlify="true" netlify-honeypot="bot-field" class="interest-form">
+    <input type="hidden" name="form-name" value="sovereign-os-interest">
+    <p style="display:none;"><input name="bot-field"></p>
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <button type="submit">Join the Interest List</button>
+  </form>
+  <p class="note" style="margin-top: 32px;">Ready to go deeper now? <a href="aos.html" style="color: rgba(247,244,239,0.45); text-decoration: none; border-bottom: 1px solid rgba(247,244,239,0.2);">Apply for the AOS.</a></p>
+</div>
+
+</main>
+
+<footer>
+  <span style="display:inline-flex;align-items:center;gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="18" viewBox="0 0 14 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 1v10q0 4.5 4 4.5q4 0 4-4.5v-10"/><line x1="7" y1="15.5" x2="7" y2="21"/></svg>Attune Coaching Group</span>
+  <div style="display:flex; gap: 32px;">
+    <a href="aos.html">AOS</a>
+    <a href="camps.html">Camps</a>
+    <a href="course.html">Course</a>
+    <a href="about.html">About</a>
+    <a href="apply.html">Apply</a>
+  </div>
+  <span>attunecoachinggroup.com</span>
+</footer>
+
+</body>
+</html>

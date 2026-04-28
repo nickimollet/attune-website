@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attunement Camps — Attune</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero { padding: 180px 48px 96px; max-width: var(--max); margin: 0 auto; }
+    .page-hero h1 { margin-bottom: 32px; }
+    .page-hero p { font-size: 20px; color: var(--mid); font-style: italic; }
+
+    /* LOCATION */
+    .location-section {
+      text-align: center;
+      padding: 96px 24px;
+    }
+    .location-name {
+      font-size: clamp(40px, 7vw, 80px);
+      font-weight: normal;
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .location-sub {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 36px;
+      display: block;
+    }
+    .location-detail {
+      font-size: 18px;
+      color: var(--mid);
+      font-style: italic;
+      max-width: 380px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+    .location-private {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* CALENDAR */
+    .dates-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+    }
+    @media (max-width: 860px) { .dates-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .dates-grid { grid-template-columns: 1fr; } }
+
+    .date-card {
+      background: var(--cream);
+      padding: 52px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .date-card.inaugural {
+      background: var(--dark);
+    }
+    .date-month {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .date-card.inaugural .date-month { color: rgba(247,244,239,0.7); }
+
+    .date-range {
+      font-size: clamp(44px, 5vw, 64px);
+      font-family: 'Georgia', serif;
+      font-weight: normal;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--dark);
+    }
+    .date-card.inaugural .date-range { color: var(--cream); }
+
+    .date-year {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+    .date-card.inaugural .date-year { color: rgba(247,244,239,0.6); }
+
+    .date-badge {
+      display: inline-block;
+      align-self: flex-start;
+      margin-top: 8px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--cream);
+      padding: 5px 12px;
+    }
+
+    .photo-strip {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .photo-strip.tall { height: 80vh; }
+    .photo-strip.mid { height: 55vh; }
+    @media (max-width: 600px) {
+      .photo-strip.tall { height: 60vw; }
+      .photo-strip.mid { height: 50vw; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav aria-label="Main navigation">
+  <a href="index.html" class="nav-logo"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="20" viewBox="0 0 14 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 1v10q0 4.5 4 4.5q4 0 4-4.5v-10"/><line x1="7" y1="15.5" x2="7" y2="21"/></svg>Attune</a>
+  <div class="nav-links">
+    <a href="index.html#work">Services</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="about.html">About</a>
+    <a href="apply.html" class="cta">Apply</a>
+  </div>
+</nav>
+
+<main id="main-content">
+<div class="page-hero">
+  <span class="label">Attunement Camps</span>
+  <h1>Sovereignty<br>in practice.</h1>
+  <p>Where the work stops being a concept and starts being something you live — in your body, around other people living in theirs.</p>
+</div>
+
+<img src="images/campfire-beach.jpeg" alt="Campfire on the beach at dusk, Baja California Sur" class="photo-strip tall">
+
+<section>
+  <span class="label">What This Is</span>
+  <p style="font-size: 22px; font-style: italic; color: var(--mid); margin-bottom: 40px;">An invitation to stop. To return to yourself. To practice operating from your own system — and feel what that is like in relationship with others.</p>
+  <p>Most of modern life is designed to override your signal. To move faster than your body can register. Attunement Camps are held, facilitated space — to slow down, to remember what you know, with other people doing the same.</p>
+  <p>You come as yourself. You leave more yourself.</p>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <span class="label">The Practice</span>
+  <ul class="dashed">
+    <li>Practicing your operating system — not just understanding it</li>
+    <li>Being in community with others living from their own sovereignty</li>
+    <li>Learning what attunement feels like as a relational experience, not a concept</li>
+    <li>Held, facilitated space — unhurried, embodied, real</li>
+  </ul>
+</section>
+
+<img src="images/baja-beach.jpeg" alt="Wild beach, Baja California Sur" class="photo-strip mid">
+
+<!-- LOCATION -->
+<div class="location-section">
+  <span class="label">Where</span>
+  <p class="location-name">Baja California Sur.</p>
+  <span class="location-sub">Desert &nbsp;·&nbsp; Pacific Coast &nbsp;·&nbsp; Mexico</span>
+  <p class="location-detail">The kind of place that does something to you before the work even begins.</p>
+  <span class="location-private">Specific location shared upon registration.</span>
+</div>
+
+<div class="divider"></div>
+
+<!-- CALENDAR -->
+<section class="wide">
+  <span class="label">The Season</span>
+  <p style="font-size: 20px; color: var(--mid); font-style: italic; max-width: 480px;">Five days. Three days of activities. A small group. Room to breathe.</p>
+  <div class="dates-grid">
+    <div class="date-card inaugural">
+      <span class="date-month">October</span>
+      <span class="date-range">26—30</span>
+      <span class="date-year">2026</span>
+      <span class="date-badge">Inaugural</span>
+    </div>
+    <div class="date-card">
+      <span class="date-month">April</span>
+      <span class="date-range">5—9</span>
+      <span class="date-year">2027</span>
+    </div>
+    <div class="date-card">
+      <span class="date-month">June</span>
+      <span class="date-range">7—11</span>
+      <span class="date-year">2027</span>
+    </div>
+    <div class="date-card">
+      <span class="date-month">October</span>
+      <span class="date-range">4—8</span>
+      <span class="date-year">2027</span>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <span class="label">Register Interest</span>
+  <p>Tell us which dates call to you. We'll be in touch with everything you need to know.</p>
+  <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=Attunement%20Camps%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="btn btn-light">Register Interest</a>
+  <p class="note">Small groups &nbsp;·&nbsp; Limited availability &nbsp;·&nbsp; Location details shared upon confirmation</p>
+</div>
+
+</main>
+
+<footer>
+  <span style="display:inline-flex;align-items:center;gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="18" viewBox="0 0 14 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 1v10q0 4.5 4 4.5q4 0 4-4.5v-10"/><line x1="7" y1="15.5" x2="7" y2="21"/></svg>Attune Coaching Group</span>
+  <div style="display:flex; gap: 32px;">
+    <a href="aos.html">AOS</a>
+    <a href="camps.html">Camps</a>
+    <a href="course.html">Course</a>
+    <a href="about.html">About</a>
+    <a href="apply.html">Apply</a>
+  </div>
+  <span>attunecoachinggroup.com</span>
+</footer>
+
+</body>
+</html>

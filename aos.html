@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Attuned Operating System — Attune</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #F7F4EF;
+      --white: #FDFCFA;
+      --dark: #141412;
+      --mid: #3D3C38;
+      --muted: #6E6D69;
+      --accent: #2A5C5C;
+      --rule: #E4E0D8;
+      --max: 680px;
+      --wide: 1000px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--dark);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 18px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(253,252,250,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .logo {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .logo svg { flex-shrink: 0; }
+    .nav-cta {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .nav-cta:hover { opacity: 0.6; }
+
+    /* HERO */
+    .hero {
+      padding: 200px 24px 140px;
+      text-align: center;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: clamp(42px, 6vw, 68px);
+      font-weight: normal;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 36px;
+      color: var(--dark);
+    }
+    .hero-sub {
+      font-size: 19px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* DIVIDER */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--rule);
+      margin: 0 auto;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 96px 24px;
+    }
+    section.wide {
+      max-width: var(--wide);
+      padding: 96px 48px;
+    }
+
+    .label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 52px;
+      display: block;
+    }
+
+    p { margin-bottom: 22px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* PREMISE */
+    .premise-opener {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.3;
+      font-weight: normal;
+      margin-bottom: 48px;
+      color: var(--dark);
+    }
+    .premise-bold {
+      font-size: 22px;
+      line-height: 1.5;
+      font-style: italic;
+      margin: 52px 0;
+      padding-left: 28px;
+      border-left: 1px solid var(--accent);
+      color: var(--mid);
+    }
+    .premise-note {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 52px;
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* PHASES */
+    .phases-intro {
+      font-size: 20px;
+      font-style: italic;
+      color: var(--mid);
+      margin-bottom: 80px;
+      text-align: center;
+    }
+    .phases { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; }
+    @media (max-width: 700px) { .phases { grid-template-columns: 1fr; } }
+    .phase {
+      padding: 48px 36px;
+      background: var(--cream);
+    }
+    .phase-num {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .phase-name {
+      font-size: 22px;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+    .phase p { font-size: 16px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+    .phase-meta {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    /* FOR YOU */
+    .for-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    @media (max-width: 640px) { .for-grid { grid-template-columns: 1fr; gap: 48px; } }
+    .for-col-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+      display: block;
+    }
+    ul { list-style: none; }
+    li {
+      padding: 14px 0;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--mid);
+      border-bottom: 1px solid var(--rule);
+    }
+    li:last-child { border-bottom: none; }
+
+    /* ARTIFACTS */
+    .artifacts-lead {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: normal;
+      font-style: italic;
+      line-height: 1.4;
+      margin-bottom: 40px;
+      color: var(--dark);
+    }
+    .outcome {
+      font-size: 17px;
+      color: var(--mid);
+      margin-bottom: 52px;
+    }
+
+    /* INVESTMENT */
+    .price-block { text-align: center; padding: 80px 0; }
+    .price {
+      font-size: clamp(64px, 10vw, 100px);
+      font-weight: normal;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .price-meta {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 64px;
+    }
+    .includes {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    /* TEAM */
+    .pullquote {
+      font-size: clamp(20px, 3vw, 28px);
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--mid);
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 80px;
+    }
+    .team-intro {
+      font-size: 16px;
+      color: var(--muted);
+      text-align: center;
+      max-width: 480px;
+      margin: 0 auto 96px;
+    }
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    @media (max-width: 700px) { .team-grid { grid-template-columns: 1fr; gap: 64px; } }
+    .team-name {
+      font-size: 24px;
+      font-weight: normal;
+      margin-bottom: 4px;
+    }
+    .team-title {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+    .team-bio p { font-size: 16px; color: var(--mid); line-height: 1.75; }
+
+    /* CTA */
+    .cta-section {
+      background: var(--dark);
+      color: var(--cream);
+      padding: 120px 24px;
+      text-align: center;
+    }
+    .cta-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,0.65);
+      margin-bottom: 52px;
+      display: block;
+    }
+    .cta-section p {
+      font-size: 20px;
+      max-width: 520px;
+      margin: 0 auto 16px;
+      color: rgba(247,244,239,0.8);
+    }
+    .cta-recognition {
+      font-style: italic;
+      font-size: 18px;
+      max-width: 460px;
+      margin: 0 auto 56px;
+      color: rgba(247,244,239,0.8);
+    }
+    .cta-button {
+      display: inline-block;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dark);
+      background: var(--cream);
+      padding: 20px 56px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-button:hover { opacity: 0.85; }
+    .cta-note {
+      margin-top: 28px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: rgba(247,244,239,0.65);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 36px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      border-top: 1px solid var(--rule);
+    }
+    @media (max-width: 600px) { footer { flex-direction: column; gap: 12px; text-align: center; } }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content" style="position:absolute;top:-56px;left:24px;z-index:999;padding:14px 24px;background:#2A5C5C;color:#fff;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;text-decoration:none;border-radius:0 0 4px 4px;transition:top 0.15s ease;">Skip to main content</a>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="20" viewBox="0 0 14 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 1v10q0 4.5 4 4.5q4 0 4-4.5v-10"/><line x1="7" y1="15.5" x2="7" y2="21"/></svg>Attune</a>
+  <a href="#apply" class="nav-cta">Apply</a>
+</nav>
+
+<!-- HERO -->
+<main id="main-content">
+<div class="hero">
+  <p class="eyebrow">Quarterly Membership &nbsp;·&nbsp; Apply</p>
+  <h1>The Attuned<br>Operating System.</h1>
+  <p class="hero-sub">You attune first. Then you build AI that serves exactly that. You lead. It follows.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- PREMISE -->
+<section>
+  <span class="label">The Premise</span>
+  <p class="premise-opener">What is AI is no longer the question.</p>
+  <p>How you live alongside it — clearly, on your own terms, without getting carried by someone else's agenda — that's the question. This is one clear action step toward a different relationship with technology. And with yourself.</p>
+  <p>Most people react from fear. Or rush to adopt without thinking. They optimize their outputs, automate their habits, accelerate their defaults. They get faster. Not clearer.</p>
+  <p>Attune is a third way.</p>
+  <div class="premise-bold">
+    You don't need to become more like AI.<br>
+    You need AI that becomes more like you.
+  </div>
+  <p>You sit with the discomfort. You learn who you are — your values, your judgment, your way of being in the world. You build an operating system from what you've actually lived, not from ideals or aspirations. Then you train AI to reflect exactly that.</p>
+  <p>As you evolve, your AI evolves with you. One practice. Two dimensions of growth — for the rest of your life.</p>
+  <p class="premise-note">This is not a productivity play. It is a life practice. And it is perfectly timed. You don't need to have it figured out. You need to be willing to go forward — clearly, honestly, together.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- PHASES -->
+<section class="wide">
+  <span class="label" style="text-align:center; display:block;">The Shape of the Experience</span>
+  <p class="phases-intro">One in-person foundation. Three quarterly studios. A year of real work.</p>
+  <div class="phases">
+    <div class="phase">
+      <p class="phase-num">The Foundation</p>
+      <p class="phase-name">In-Person Intensive</p>
+      <p>Where it begins. You come together in person to learn the conceptual framework — not the technology first, but the thinking behind it. Concepts, principles, philosophy. You leave knowing what you're building and why.</p>
+      <p class="phase-meta">Once &nbsp;·&nbsp; In person</p>
+    </div>
+    <div class="phase">
+      <p class="phase-num">The Ongoing Practice</p>
+      <p class="phase-name">Quarterly Studio</p>
+      <p>Three times a year, the cohort returns to reflect, iterate, and grow. Your OS evolves because you do — and because the world does too. This is where the work stays alive. Held digitally, with full presence.</p>
+      <p class="phase-meta">Three times a year &nbsp;·&nbsp; Digital</p>
+    </div>
+    <div class="phase">
+      <p class="phase-num">The Practice Ground</p>
+      <p class="phase-name">Attunement Camps</p>
+      <p>Where sovereignty stops being a concept and starts being something you live — in your body, around other people living in theirs. Practice operating from your own system. Experience what it feels like in relationship.</p>
+      <p class="phase-meta">Ongoing &nbsp;·&nbsp; In person</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FOR YOU -->
+<section>
+  <span class="label">Who This Is For</span>
+  <div class="for-grid">
+    <div>
+      <span class="for-col-label">For you, if</span>
+      <ul>
+        <li>The fogginess has set in and you're ready to get clear — not faster, clearer.</li>
+        <li>You sense the tide of AI coming in, and want to meet it as yourself.</li>
+        <li>You are skeptical of tech-bro urgency but curious about what agentic AI could actually be in your life.</li>
+        <li>You already know the real leverage is being known — starting with knowing yourself.</li>
+        <li>You want to learn in a small cohort, in a body, with real people.</li>
+        <li>You are a founder, executive, inheritor, or practice owner with the resources to invest in this depth.</li>
+      </ul>
+    </div>
+    <div>
+      <span class="for-col-label">Not for you, if</span>
+      <ul>
+        <li>You are looking for hacks, prompts, or AI productivity content.</li>
+        <li>You are using AI to eliminate jobs without creating new pathways for the humans affected.</li>
+        <li>You think an external system can replace internal work.</li>
+        <li>You prefer screen-based learning and didactic courses.</li>
+        <li>You want to move quickly. This offering is deliberately unhurried.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ARTIFACTS -->
+<section>
+  <span class="label">What You Leave With</span>
+  <p class="artifacts-lead">Not a certificate. Self-legibility — and a system to hold it.</p>
+  <p class="outcome">You will be able to read yourself and say what you find. You'll know how you operate, what you need, where you're growing, and how you grow. The fog lifts. Not because life gets easier. Because you get clearer.</p>
+  <div class="premise-bold">"A different version of me would have gotten really beaten down by this. This version just dealt with it."<br><span style="font-style: normal; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);">AOS member &nbsp;·&nbsp; three months in</span></div>
+  <ul>
+    <li>An agentic AI system that reflects your voice, values, rhythms, and relationships.</li>
+    <li>A Notion workspace that holds your life and runs with you.</li>
+    <li>A living OS — not a product, a practice — that updates as you do.</li>
+    <li>A cohort of peers walking the same path.</li>
+    <li>Two 1:1 integration calls with Nicki or Kat.</li>
+    <li>One year of alumni community access and an invitation to the annual refinement immersion.</li>
+  </ul>
+</section>
+
+<div class="divider"></div>
+
+<!-- INVESTMENT -->
+<section>
+  <span class="label">The Investment</span>
+  <div class="price-block">
+    <p class="price-meta" style="margin-bottom: 48px;">Founding year membership &nbsp;·&nbsp; Apply</p>
+    <div class="includes">
+      <ul>
+        <li>One in-person intensive — lodging, meals, and facilitation included</li>
+        <li>Three quarterly digital studios — reflection, iteration, and growth</li>
+        <li>Your own agentic AI system, built and running alongside your internal OS</li>
+        <li>Cohort — people doing the same real work</li>
+        <li>Two 1:1 integration calls with Nicki or Kat</li>
+        <li>Access to Attunement Camps throughout the year</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TEAM -->
+<section class="wide">
+  <p class="pullquote">"The deepest form of teaching is really just watching someone become more themselves."</p>
+  <p class="team-intro">That is what we are here to do. What you build alongside us is the same practice we run daily — not a curriculum invented for a course.</p>
+  <div class="team-grid">
+    <div class="team-bio">
+      <p class="team-name">Nicki Mollet</p>
+      <p class="team-title">M.Ed. &nbsp;·&nbsp; Partner</p>
+      <p>Nicki grew up on the plains of South Dakota, the second of five children in a farming family where discipline wasn't a concept — it was the weather, the harvest, the way things got done. At 17 she graduated a year early. At 18 she was on a plane to Panama.</p>
+      <p>She spent eleven years educating in Santiago, Chile — starting as an English teacher and ending as Campus Director. When her life in Chile ended — suddenly, painfully — she learned something harder than any curriculum: how to not become a victim of her own story.</p>
+      <p>She became a professional coach, and it rewired her. Her methodology is relational and somatic. She brings twenty years of cross-cultural experience and the unshakeable belief that belonging is the precondition for everything else: courage, creativity, contribution.</p>
+    </div>
+    <div class="team-bio">
+      <p class="team-name">Kathryn Snyder</p>
+      <p class="team-title">PCC, CPCC &nbsp;·&nbsp; Founder</p>
+      <p>Born in Japan, raised in Germany by Midwesterners — Kat is, by formation, a Third Culture Kid. Permanently curious about what makes people tick. Deeply committed to the belief that no two humans experience the world the same way.</p>
+      <p>She spent more than two decades in corporate America — systems engineering, network engineering, people leadership at E*Trade and Capital One. She burned out, twice, and had the self-awareness to ask why. The honest answer: she was achieving on empty.</p>
+      <p><em>What's dying while I'm busy succeeding?</em> That question led her out of corporate America and into the work that has defined the second half of her career. She holds a PCC, CPCC, and ORSC training. She believes aliveness is the map.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" id="apply">
+  <span class="cta-label">The Next Step</span>
+  <p>Tell us what resonated. We'll make sure we can give you exactly what you need.</p>
+  <p class="cta-recognition">If you felt something reading this — a quiet recognition — you're probably our person.</p>
+  <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=AOS%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="cta-button">Apply</a>
+  <p class="cta-note">2027 Intensives: Jan 25–29 &nbsp;·&nbsp; Apr 26–30 &nbsp;·&nbsp; Jun 21–25 &nbsp;·&nbsp; Oct 25–29</p>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span style="display:inline-flex;align-items:center;gap:7px;"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="18" viewBox="0 0 14 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 1v10q0 4.5 4 4.5q4 0 4-4.5v-10"/><line x1="7" y1="15.5" x2="7" y2="21"/></svg>Attune Coaching Group</span>
+  <span>attunecoachinggroup.com</span>
+</footer>
+
+</body>
+</html>
