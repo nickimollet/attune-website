@@ -114,11 +114,12 @@
     /* TEAM STRIP */
     .team-strip {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 64px;
       margin-top: 56px;
     }
-    @media (max-width: 640px) { .team-strip { grid-template-columns: 1fr; gap: 48px; } }
+    @media (max-width: 860px) { .team-strip { grid-template-columns: 1fr 1fr; gap: 48px; } }
+    @media (max-width: 560px) { .team-strip { grid-template-columns: 1fr; gap: 48px; } }
     .team-strip .name { font-size: 22px; margin-bottom: 4px; }
     .team-strip .title {
       font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -303,16 +304,22 @@
   <span class="label">Who We Are</span>
   <div class="team-strip">
     <div>
+      <p class="name">Kathryn Snyder</p>
+      <p class="title">PCC, CPCC &nbsp;·&nbsp; CEO &amp; Founder</p>
+      <p>Two decades in corporate America — engineering, operations, people leadership at E*Trade and Capital One. Two burnouts. One honest question: <em>what's dying while I'm busy succeeding?</em> That question built Attune. She believes aliveness is the map.</p>
+      <a href="about.html">Full bio — Kathryn Snyder</a>
+    </div>
+    <div>
       <p class="name">Nicki Mollet</p>
-      <p class="title">M.Ed. &nbsp;·&nbsp; Partner</p>
+      <p class="title">M.Ed. &nbsp;·&nbsp; Partner &amp; COO</p>
       <p>From the plains of South Dakota to eleven years leading schools in Santiago, Chile — Nicki has spent twenty years watching people become more themselves. Her methodology is relational and somatic. She believes belonging is the precondition for everything else.</p>
       <a href="about.html">Full bio — Nicki Mollet</a>
     </div>
     <div>
-      <p class="name">Kathryn Snyder</p>
-      <p class="title">PCC, CPCC &nbsp;·&nbsp; Founder</p>
-      <p>Two decades in corporate America — engineering, operations, people leadership at E*Trade and Capital One. Two burnouts. One honest question: <em>what's dying while I'm busy succeeding?</em> That question built Attune. She believes aliveness is the map.</p>
-      <a href="about.html">Full bio — Kathryn Snyder</a>
+      <p class="name">David Ding</p>
+      <p class="title">CTO &nbsp;·&nbsp; Partner</p>
+      <p>Built AI-native infrastructure before it had a name. Co-founder of Inverse — organizational coherence for the AI age. David joined Attune because he believes the internal work and the technical work are not separate problems. He builds the systems that let the philosophy hold.</p>
+      <a href="about.html">Full bio — David Ding</a>
     </div>
   </div>
 </section>
