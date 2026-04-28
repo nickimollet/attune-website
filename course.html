@@ -3,20 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Sovereign OS — the philosophy and practice of Attune, taught as a self-paced course. Almost ready to launch. Join the interest list.">
+  <meta name="description" content="The Sovereign OS — a philosophy and practice course for people ready to lead AI on their own terms. The internal work is the prerequisite. Four modules. Self-paced.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://attunecoachinggroup.com/course.html">
   <meta property="og:title" content="The Sovereign OS — Attune">
-  <meta property="og:description" content="The philosophy and practice of Attune, taught as a course. The internal work first. Join the interest list.">
+  <meta property="og:description" content="A philosophy and practice course for people ready to lead AI on their own terms. The internal work first.">
   <meta property="og:image" content="https://attunecoachinggroup.com/images/baja-beach.jpeg">
   <title>The Sovereign OS — Attune</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-hero { padding: 180px 48px 96px; max-width: var(--max); margin: 0 auto; }
-    .page-hero h1 { margin-bottom: 32px; }
-    .page-hero p { font-size: 20px; color: var(--mid); font-style: italic; }
-    .interest-form { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; max-width: 420px; margin-left: auto; margin-right: auto; }
+    /* HERO */
+    .course-hero {
+      padding: 180px 48px 96px;
+      max-width: var(--wide);
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) { .course-hero { padding: 140px 24px 72px; } }
+    .course-hero h1 { max-width: 700px; margin-bottom: 32px; }
+    .course-hero .hero-sub {
+      font-size: 20px;
+      color: var(--mid);
+      font-style: italic;
+      max-width: 540px;
+      line-height: 1.65;
+    }
+
+    /* MODULE GRID */
+    .module-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 56px;
+    }
+    @media (max-width: 680px) { .module-grid { grid-template-columns: 1fr; } }
+    .module-card {
+      background: var(--cream);
+      padding: 52px 44px;
+    }
+    .module-letter {
+      font-family: 'Georgia', serif;
+      font-size: 64px;
+      font-weight: normal;
+      line-height: 1;
+      color: var(--accent);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .module-card h3 { font-size: 22px; margin-bottom: 16px; }
+    .module-card p { font-size: 16px; color: var(--mid); line-height: 1.75; }
+    .module-card .module-crux {
+      font-size: 14px;
+      color: var(--accent);
+      font-style: italic;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    /* FOR YOU SECTION */
+    .for-you-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      margin-top: 56px;
+    }
+    @media (max-width: 680px) { .for-you-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .for-you-col h3 {
+      font-size: 18px;
+      margin-bottom: 24px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: normal;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: var(--accent);
+    }
+    .for-you-col ul { list-style: none; padding: 0; margin: 0; }
+    .for-you-col ul li {
+      font-size: 16px;
+      color: var(--mid);
+      line-height: 1.7;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(26,24,21,0.1);
+    }
+    .for-you-col ul li:last-child { border-bottom: none; }
+
+    /* PROGRESSION */
+    .progression-strip {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 56px;
+      flex-wrap: wrap;
+    }
+    .prog-step {
+      flex: 1;
+      min-width: 140px;
+      padding: 40px 32px;
+      background: var(--cream);
+    }
+    .prog-arrow {
+      font-size: 20px;
+      color: var(--accent);
+      padding: 0 4px;
+      flex-shrink: 0;
+    }
+    @media (max-width: 700px) {
+      .progression-strip { flex-direction: column; }
+      .prog-arrow { transform: rotate(90deg); padding: 4px 0; }
+      .prog-step { width: 100%; min-width: unset; }
+    }
+    .prog-step .prog-num {
+      font-family: 'Georgia', serif;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .prog-step .prog-title { font-size: 18px; color: var(--dark); line-height: 1.3; }
+
+    /* OUTCOMES */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 56px;
+    }
+    @media (max-width: 640px) { .outcomes-grid { grid-template-columns: 1fr; } }
+    .outcome-block {
+      background: var(--cream);
+      padding: 44px;
+    }
+    .outcome-block strong {
+      display: block;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: normal;
+    }
+    .outcome-block p { font-size: 16px; color: var(--mid); line-height: 1.75; margin: 0; }
+
+    /* FORM */
+    .interest-form {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .interest-form input[type="text"],
     .interest-form input[type="email"] {
       background: rgba(247,244,239,0.12);
@@ -60,46 +200,154 @@
 </nav>
 
 <main id="main-content">
-<div class="page-hero">
-  <span class="label">The Sovereign OS &nbsp;·&nbsp; Course</span>
-  <h1>The internal work first.</h1>
-  <p>The philosophy and practice of Attune — taught as a course for people ready to meet AI on their own terms.</p>
+
+<!-- HERO -->
+<div class="course-hero">
+  <span class="label">The Sovereign OS &nbsp;·&nbsp; Self-Paced Course</span>
+  <h1>You attune first.</h1>
+  <p class="hero-sub">A philosophy and practice course for people ready to lead AI on their own terms. The internal work is the prerequisite — not the warm-up.</p>
 </div>
 
 <div class="divider"></div>
 
-<section>
+<!-- WHAT THIS IS -->
+<section class="wide">
   <span class="label">What This Is</span>
-  <p style="font-size: 22px; font-style: italic; color: var(--mid); margin-bottom: 40px;">Not a tech course. A philosophy and practice course. The tech is the easy part. The hard part — the part worth teaching — is how to think about this.</p>
-  <p>There are thousands of AI courses. None of them start from the question: <em>how do I make AI feel like an extension of me, not a replacement for me?</em></p>
+  <p style="font-size: 22px; font-style: italic; color: var(--mid); max-width: 640px; line-height: 1.65; margin-bottom: 40px;">There are thousands of AI courses. None of them start from the question that actually matters: <em>how do I make AI feel like an extension of me — not a replacement for me?</em></p>
   <p>The Sovereign OS does.</p>
-  <p>You attune first. You build a personal operating system grounded in your actual values, your real experience, your honest relationship with what you know and don't know. Then you build AI that reflects exactly that. You lead. It follows.</p>
+  <p>This is not a course about tools. It is a course about how you operate — your values, your judgment, your way of knowing. You build that first. Then you build AI that reflects exactly that. You lead. It follows.</p>
+  <p>The internal work is not optional context. It is the structural foundation. AI built by someone who hasn't done the internal work reflects their unexamined patterns at scale. That's not power. That's risk.</p>
 </section>
 
 <div class="divider"></div>
 
-<section>
-  <span class="label">What You'll Build</span>
-  <ul class="dashed">
-    <li>Clarity on how you operate, what you need, where you're growing, and how you grow</li>
-    <li>A personal OS built from your actual lived experience — not ideals or aspirations</li>
-    <li>An understanding of agentic AI that starts from sovereignty, not productivity</li>
-    <li>The conceptual foundation to build your own AI system after the course</li>
-  </ul>
+<!-- THE CURRICULUM -->
+<section class="wide">
+  <span class="label">The Curriculum</span>
+  <p style="font-size: 17px; color: var(--mid); max-width: 560px; margin-top: 8px;">Four modules. The sequence is non-negotiable. Each stage is only accessible because the previous one was built.</p>
+  <div class="module-grid">
+    <div class="module-card">
+      <div class="module-letter">A</div>
+      <h3>Your Relational Ontology</h3>
+      <p>Map what you actually believe — not aspirationally, but structurally. A relational ontology is not a values list. It has shape: depth, sequence, causality. It answers not just <em>what</em> you believe, but <em>in what order things become possible.</em></p>
+      <p class="module-crux">The question to sit with: What is the thing that, if removed, makes everything else collapse?</p>
+    </div>
+    <div class="module-card">
+      <div class="module-letter">B</div>
+      <h3>Building Your Knowledge Base</h3>
+      <p>Build your ontology into a structured wiki — atomic notes, connected by meaningful links — that any agent can read and navigate. This is your OS made machine-readable. The bridge between the internal work and the AI layer.</p>
+      <p class="module-crux">The question to sit with: What does the graph reveal that the list didn't?</p>
+    </div>
+    <div class="module-card">
+      <div class="module-letter">C</div>
+      <h3>The Agent as Collaborator</h3>
+      <p>Most people use AI like a vending machine. This module is about the other relationship: AI as a collaborator who has read everything you've written, knows your philosophy, and comes with a point of view. The CEO in training frame.</p>
+      <p class="module-crux">The question to sit with: What would it mean for your AI to embody not-knowing?</p>
+    </div>
+    <div class="module-card">
+      <div class="module-letter">D</div>
+      <h3>The Sovereign Organization</h3>
+      <p>Personal sovereignty scales. This is the advanced module — for people ready to extend their OS to the teams and organizations around them. Do not start here. Do Module A first. Always.</p>
+      <p class="module-crux">The question to sit with: If your organization's AI reflected your collective internal OS honestly — what would it reflect?</p>
+    </div>
+  </div>
 </section>
 
 <div class="divider"></div>
 
+<!-- WHO IT'S FOR -->
+<section class="wide">
+  <span class="label">Is This For You?</span>
+  <div class="for-you-grid">
+    <div class="for-you-col">
+      <h3>For individuals</h3>
+      <ul>
+        <li>You're navigating the AI moment and want to stay yourself while you do</li>
+        <li>You sense that the internal work matters — and you want the structure to do it</li>
+        <li>You lead, coach, create, or advise — and AI is increasingly part of that</li>
+        <li>You are not looking for a shortcut. You're looking for a foundation.</li>
+      </ul>
+    </div>
+    <div class="for-you-col">
+      <h3>For organizations</h3>
+      <ul>
+        <li>Your AI rollout isn't delivering what it promised</li>
+        <li>You suspect the gap is human, not technical</li>
+        <li>You want leaders who can bring genuine values to AI — not just tasks</li>
+        <li>You understand that coherent people build coherent systems</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- THE PROGRESSION -->
+<section class="wide">
+  <span class="label">The Progression</span>
+  <p style="font-size: 17px; color: var(--mid); max-width: 560px; margin-top: 8px; margin-bottom: 0;">The work moves outward from the individual. Each stage is only possible because the previous one was built.</p>
+  <div class="progression-strip">
+    <div class="prog-step">
+      <div class="prog-num">Stage 1</div>
+      <div class="prog-title">Sovereign Self</div>
+    </div>
+    <div class="prog-arrow">→</div>
+    <div class="prog-step">
+      <div class="prog-num">Stage 2</div>
+      <div class="prog-title">Sovereign Relationship</div>
+    </div>
+    <div class="prog-arrow">→</div>
+    <div class="prog-step">
+      <div class="prog-num">Stage 3</div>
+      <div class="prog-title">Sovereign Unit</div>
+    </div>
+    <div class="prog-arrow">→</div>
+    <div class="prog-step">
+      <div class="prog-num">Stage 4</div>
+      <div class="prog-title">Sovereign Organization</div>
+    </div>
+  </div>
+  <p style="font-size: 15px; color: var(--mid); font-style: italic; margin-top: 32px;">The nodes aren't equally available. They open in order.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT YOU'LL BUILD -->
+<section class="wide">
+  <span class="label">What You'll Have When You're Done</span>
+  <div class="outcomes-grid">
+    <div class="outcome-block">
+      <strong>Your relational ontology</strong>
+      <p>A map of what you actually believe — not aspirationally. The graph of your philosophy, with the arrows that tell you what order things become possible in.</p>
+    </div>
+    <div class="outcome-block">
+      <strong>Your knowledge base</strong>
+      <p>A structured wiki of atomic notes, machine-readable and human-navigable. The foundation any agent can operate from.</p>
+    </div>
+    <div class="outcome-block">
+      <strong>An equipped agent</strong>
+      <p>An AI that has read your philosophy, operates from your values, and knows the difference between clarifying and deciding. One that serves your sovereignty — not replaces it.</p>
+    </div>
+    <div class="outcome-block">
+      <strong>A practice, not a product</strong>
+      <p>The OS is alive. It updates as you do. This course gives you the architecture and the habit of maintaining it — not a static document you'll lose track of in six months.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
 <div class="cta-section">
-  <span class="label">Join the List</span>
-  <p>The Sovereign OS is almost ready to launch. Join the interest list and you'll hear first — with early access and founding pricing.</p>
-  <p style="font-style: italic; font-size: 18px;">This is for people ready to take one clear action step toward a different relationship with technology. And with themselves.</p>
+  <span class="label">Get Early Access</span>
+  <p>The Sovereign OS is launching soon. Join the list and you'll hear first — with early access and founding pricing.</p>
+  <p style="font-style: italic; font-size: 18px;">This is for people ready to take one honest step toward a different relationship with technology. And with themselves.</p>
   <form name="sovereign-os-interest" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" class="interest-form">
     <input type="hidden" name="form-name" value="sovereign-os-interest">
     <p style="display:none;"><input name="bot-field"></p>
     <input type="text" name="name" placeholder="Your name" required>
     <input type="email" name="email" placeholder="Your email" required>
-    <button type="submit">Join the Interest List</button>
+    <button type="submit">Join the List</button>
   </form>
   <p class="note" style="margin-top: 32px;">Ready to go deeper now? <a href="aos.html" style="color: rgba(247,244,239,0.45); text-decoration: none; border-bottom: 1px solid rgba(247,244,239,0.2);">Apply for the AOS.</a></p>
 </div>
