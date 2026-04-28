@@ -109,6 +109,9 @@ section.full {
 @media (max-width: 600px) {
   nav { padding: 20px 24px; }
   section, section.wide, section.full { padding: 72px 24px; }
+  /* On mobile, hide secondary nav links — keep only the CTA */
+  .nav-links a:not(.cta) { display: none; }
+  .nav-links { gap: 0; }
 }
 
 /* TYPOGRAPHY */
