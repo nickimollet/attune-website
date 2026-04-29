@@ -31,7 +31,7 @@
 
     .paths-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 2px;
       max-width: var(--wide);
       margin: 0 auto;
@@ -45,6 +45,10 @@
       display: flex;
       flex-direction: column;
     }
+    .path-card.featured {
+      background: var(--dark);
+      color: var(--cream);
+    }
     .path-label {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       font-size: 10px;
@@ -54,8 +58,11 @@
       margin-bottom: 20px;
       display: block;
     }
+    .path-card.featured .path-label { color: rgba(247,244,239,0.4); }
     .path-card h3 { font-size: 22px; margin-bottom: 16px; }
+    .path-card.featured h3 { color: var(--cream); }
     .path-card p { font-size: 15px; color: var(--mid); line-height: 1.7; flex-grow: 1; margin-bottom: 32px; }
+    .path-card.featured p { color: rgba(247,244,239,0.7); }
     .path-link {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       font-size: 10px;
@@ -67,6 +74,7 @@
       padding-bottom: 2px;
       align-self: flex-start;
     }
+    .path-card.featured .path-link { color: rgba(247,244,239,0.7); border-color: rgba(247,244,239,0.3); }
     .path-link:hover { opacity: 0.6; }
   </style>
 </head>
@@ -79,13 +87,13 @@
     <a href="index.html#work">Services</a>
     <a href="calendar.html">Calendar</a>
     <a href="about.html">About</a>
-    <a href="apply.html" class="cta">Apply</a>
+    <a href="apply.html" class="cta">Interested?</a>
   </div>
 </nav>
 
 <main id="main-content">
 <div class="page-hero">
-  <span class="label">Apply</span>
+  <span class="label">Interested?</span>
   <h1>This is not a checkout flow.</h1>
   <p>We are selecting for fit — yours to us, and ours to you.</p>
 </div>
@@ -100,23 +108,29 @@
 </section>
 
 <div class="paths-grid">
+  <div class="path-card featured">
+    <span class="path-label">Concierge Intensive &nbsp;·&nbsp; Year-Long</span>
+    <h3>Relational</h3>
+    <p>A relational operating system built from who you actually are. Async preparation, seven days on site, and twelve weeks of integration — with hands-on AI build support. For individuals and teams. Eight people per cohort. Location TBD.</p>
+    <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=Relational%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="path-link">Get Connected</a>
+  </div>
   <div class="path-card">
-    <span class="path-label">Flagship &nbsp;·&nbsp; Quarterly Membership</span>
-    <h3>The Attuned Operating System</h3>
-    <p>A year-long membership with quarterly gatherings — one in-person intensive, the rest live and remote. Tell us what resonated and what you're looking for.</p>
-    <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=AOS%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="path-link">Apply for the AOS</a>
+    <span class="path-label">Community &nbsp;·&nbsp; Ongoing</span>
+    <h3>Membership</h3>
+    <p>A real cohort. Two live sessions a month, full access to the AOS and our library, and quarterly dispatches on where human-centered AI is moving. Come as much as serves you — no commitment, no performance.</p>
+    <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=Membership%20%E2%80%94%20Interest&body=Hi%20Nicki%20and%20Kat%2C%0A%0AI%27m%20interested%20in%20the%20Membership.%0A%0AWhat%20resonated%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="path-link">Interested?</a>
   </div>
   <div class="path-card">
     <span class="path-label">In-Person &nbsp;·&nbsp; Baja California Sur</span>
-    <h3>Attunement Camps</h3>
-    <p>Five days. Small group. A specific location — details shared upon confirmation. Tell us which dates call to you.</p>
-    <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=Attunement%20Camps%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="path-link">Register Interest</a>
+    <h3>Attunement Camp</h3>
+    <p>Five days. Small group. Pure attunement practice — no AI implementation on site. The kind of place that does something to you before the work even begins. Tell us which dates call to you.</p>
+    <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=Attunement%20Camps%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="path-link">Get Connected</a>
   </div>
   <div class="path-card">
-    <span class="path-label">Course &nbsp;·&nbsp; In Development</span>
-    <h3>The Sovereign OS</h3>
-    <p>The philosophy and practice of Attune, taught as a course. Almost ready to launch. Join the list — you'll hear first.</p>
-    <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=The%20Sovereign%20OS%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="path-link">Join the Interest List</a>
+    <span class="path-label">Course &nbsp;·&nbsp; Self-Paced</span>
+    <h3>The Sovereign AOS</h3>
+    <p>The philosophy and practice of Attune, self-paced. The internal work first — your relational ontology, your knowledge base, your agent as collaborator.</p>
+    <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=The%20Sovereign%20AOS%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="path-link">Interested?</a>
   </div>
 </div>
 
@@ -129,7 +143,7 @@
     <a href="camps.html">Camps</a>
     <a href="course.html">Course</a>
     <a href="about.html">About</a>
-    <a href="apply.html">Apply</a>
+    <a href="apply.html">Interested?</a>
   </div>
   <span>attunecoachinggroup.com</span>
 </footer>

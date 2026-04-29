@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Attune Coaching Group — a practice for people who want to lead AI on their own terms. Not how to use it. How to stay yourself while you do.">
+  <meta name="description" content="Attune Coaching Group — AI is here. Attune first. How to stay yourself so you know what you want, what you need, and you choose accordingly.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://attunecoachinggroup.com">
   <meta property="og:title" content="Attune — Sovereignty is a practice.">
-  <meta property="og:description" content="Attune Coaching Group — a practice for people who want to lead AI on their own terms. Not how to use it. How to stay yourself while you do.">
+  <meta property="og:description" content="AI is here. Attune first. Sovereignty is a practice — how to stay yourself so you know what you want, what you need, and you choose accordingly.">
   <meta property="og:image" content="https://attunecoachinggroup.com/images/baja-beach.jpeg">
   <title>Attune — Sovereignty is a practice.</title>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -116,6 +116,49 @@
     }
     .offer-card.featured .offer-link { color: rgba(247,244,239,0.7); border-color: rgba(247,244,239,0.3); }
     .offer-link:hover { opacity: 0.6; }
+    .offer-subtitle {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(247,244,239,0.5);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    /* PATH LABELS */
+    .path-row-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-top: 56px;
+      margin-bottom: 20px;
+    }
+    .offers-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 700px) { .offers-grid.cols-2 { grid-template-columns: 1fr; } }
+    .offers-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    @media (max-width: 900px) { .offers-grid.cols-3 { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .offers-grid.cols-3 { grid-template-columns: 1fr; } }
+    .offers-grid.cols-1 { grid-template-columns: 1fr; }
+    .offers-grid.no-top { margin-top: 0; }
+
+    /* MISSION CARD */
+    .mission-card {
+      margin-top: 2px;
+      padding: 52px 44px;
+      background: var(--dark);
+      color: var(--cream);
+      display: flex;
+      flex-direction: column;
+    }
+    .mission-card .offer-label { color: rgba(247,244,239,0.4); }
+    .mission-card h3 { font-size: 24px; margin-bottom: 16px; color: var(--cream); }
+    .mission-card p { font-size: 15px; color: rgba(247,244,239,0.7); line-height: 1.7; flex-grow: 1; }
+    .mission-card .offer-price { color: rgba(247,244,239,0.4); margin-top: 32px; }
+    .mission-card .offer-link { color: rgba(247,244,239,0.7); border-color: rgba(247,244,239,0.3); margin-top: 28px; }
 
     /* TEAM STRIP */
     .team-strip {
@@ -206,16 +249,16 @@
     <a href="#work">Services</a>
     <a href="calendar.html">Calendar</a>
     <a href="about.html">About</a>
-    <a href="apply.html" class="cta">Apply</a>
+    <a href="apply.html" class="cta">Interested?</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <main id="main-content">
 <div class="hero">
-  <p class="hero-tag">Attune first.</p>
+  <p class="hero-tag">AI is here. Attune first.</p>
   <h1>Sovereignty<br>is a practice.</h1>
-  <p class="hero-sub">Not how to use it. How to stay yourself while you do.</p>
+  <p class="hero-sub">How to stay yourself — so you know what you want, what you need, and you choose accordingly.</p>
 </div>
 
 <div class="divider"></div>
@@ -252,29 +295,40 @@
 <!-- OFFERS -->
 <section class="wide" id="work">
   <span class="label">Services</span>
-  <div class="offers-grid">
+
+  <p style="font-size: 17px; font-style: italic; color: var(--mid); max-width: 480px; margin-top: 32px; line-height: 1.6;">Attunement is the practice. Sovereignty is what it builds.</p>
+  <span class="path-row-label">The Personal Path</span>
+  <div class="offers-grid cols-3 no-top">
     <div class="offer-card featured">
-      <span class="offer-label">Flagship &nbsp;·&nbsp; Quarterly Membership</span>
-      <h3>AOS</h3>
-      <span class="offer-subtitle">The Attuned Operating System</span>
-      <p>You attune first. You come to know yourself — your values, your judgment, the way you operate. Then you build AI that serves exactly that. You lead. It follows.</p>
-      <span class="offer-price">Founding year &nbsp;·&nbsp; Apply</span>
+      <span class="offer-label">Intensive &nbsp;·&nbsp; In-Person</span>
+      <h3>Relational</h3>
+      <span class="offer-subtitle">Where AI meets relational ontology</span>
+      <p>A concierge intensive and year-long membership. Seven days on site — no technology. You attune first. Then you build a relational operating system from who you actually are: your values, your way of leading, your impact in the world. For individuals and leadership teams alike.</p>
+      <span class="offer-price">Application required &nbsp;·&nbsp; Location TBD &nbsp;·&nbsp; Founding year open</span>
       <a href="aos.html" class="offer-link">Learn more</a>
     </div>
     <div class="offer-card">
-      <span class="offer-label">In-Person &nbsp;·&nbsp; Ongoing</span>
-      <h3>Attunement Camps</h3>
-      <p>Where sovereignty stops being a concept and starts being something you live — in your body, around other people living in theirs. Practice. Presence. Relationship.</p>
-      <span class="offer-price">Made for adult kids that went to camp.</span>
-      <a href="camps.html" class="offer-link">Learn more</a>
+      <span class="offer-label">Community &nbsp;·&nbsp; Ongoing</span>
+      <h3>Membership</h3>
+      <p>A real cohort. Two live sessions a month with real humans — and a community that holds you between them. No obligation, no performance. Come as much as serves you. Full access to the AOS, our library of resources, and all past offerings. Quarterly dispatches on where human-centered AI is moving in the world.</p>
+      <a href="apply.html" class="offer-link">Interested?</a>
     </div>
     <div class="offer-card">
-      <span class="offer-label">Course &nbsp;·&nbsp; Self-Paced</span>
-      <h3>The Sovereign OS</h3>
-      <p>The philosophy and practice of Attune — taught as a course for people ready to meet AI on their own terms.</p>
-      <span class="offer-price">Join us</span>
-      <a href="course.html" class="offer-link">Learn more</a>
+      <span class="offer-label">In-Person &nbsp;·&nbsp; Five Days</span>
+      <h3>Attunement Camp</h3>
+      <p>Some things can only be learned by showing up. Five days in Baja. Small group. Unhurried. Where the personal work — the kind that lights the way — stops being a concept and starts being something you carry. Pure attunement. No AI on site.</p>
+      <span class="offer-price">Small groups &nbsp;·&nbsp; Baja California Sur</span>
+      <a href="camps.html" class="offer-link">Learn more</a>
     </div>
+  </div>
+
+  <p style="font-size: 22px; color: var(--mid); font-style: italic; text-align: center; margin-top: 64px; padding-top: 64px; border-top: 1px solid var(--rule); line-height: 1.6;">Whether you come as an individual or bring your team —<br>the entry point is the same: you, knowing yourself.</p>
+
+  <div class="mission-card">
+    <span class="offer-label">The Larger Work &nbsp;·&nbsp; Course + Community</span>
+    <h3>The Sovereign AOS</h3>
+    <p>A self-paced course and lifetime access to the community building human-centered agentic AI — trained on the full range of human experience, so it can serve all people to thrive. Not just the ones who already have access. This is the work behind the work. You're invited.</p>
+    <a href="course.html" class="offer-link">Learn more</a>
   </div>
 </section>
 
@@ -311,7 +365,7 @@
     <div>
       <p class="name">Kathryn Snyder</p>
       <p class="title">PCC, CPCC &nbsp;·&nbsp; CEO &amp; Founder</p>
-      <p>Two decades in corporate America — engineering, operations, people leadership at E*Trade and Capital One. Two burnouts. One honest question: <em>what's dying while I'm busy succeeding?</em> That question built Attune. She believes aliveness is the map.</p>
+      <p>Two decades in corporate America — engineering, operations, people leadership. Two burnouts. One honest question: <em>what's dying while I'm busy succeeding?</em> That question built Attune. She believes aliveness is the map.</p>
       <a href="about.html">Full bio — Kathryn Snyder</a>
     </div>
     <div>
@@ -336,7 +390,7 @@
   <span class="label">Ready to Begin</span>
   <p>You don't need to have it figured out. You need to be willing to go forward — clearly, honestly, together.</p>
   <p style="font-style: italic; font-size: 18px;">If you felt something reading this — a quiet recognition — you're probably our person.</p>
-  <a href="mailto:nicki@attunecoachinggroup.com,kathryn@attunecoachinggroup.com?subject=AOS%20%E2%80%94%20Let%27s%20connect&body=Hi%20Nicki%20and%20Kat%2C%0A%0AWhat%20resonated%20with%20me%3A%0A%0AWhat%20I%27m%20looking%20for%3A%0A%0A" class="btn btn-light">Apply for the AOS</a>
+  <a href="apply.html" class="btn btn-light">Interested?</a>
   <p class="note"><a href="calendar.html" style="color: rgba(247,244,239,0.65); text-decoration: none; border-bottom: 1px solid rgba(247,244,239,0.4);">View full calendar</a></p>
 </div>
 
@@ -350,7 +404,7 @@
     <a href="camps.html">Camps</a>
     <a href="course.html">Course</a>
     <a href="about.html">About</a>
-    <a href="apply.html">Apply</a>
+    <a href="apply.html">Interested?</a>
   </div>
   <span>attunecoachinggroup.com</span>
 </footer>
