@@ -109,9 +109,8 @@ section.full {
 @media (max-width: 600px) {
   nav { padding: 20px 24px; }
   section, section.wide, section.full { padding: 72px 24px; }
-  /* On mobile, hide secondary nav links — keep only the CTA */
-  .nav-links a:not(.cta) { display: none; }
-  .nav-links { gap: 0; }
+  .nav-links a:not(.cta):not(.nav-primary) { display: none; }
+  .nav-links { gap: 20px; }
 }
 
 /* TYPOGRAPHY */
@@ -177,7 +176,7 @@ em { font-style: italic; }
 }
 .cta-section .label { color: rgba(247,244,239,0.65); }
 .cta-section p { color: rgba(247,244,239,0.85); max-width: 520px; margin: 0 auto 16px; font-size: 20px; }
-.cta-section .note { font-size: 13px; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.1em; color: rgba(247,244,239,0.6); margin-top: 28px; }
+.cta-section .note { font-size: 15px; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.08em; color: rgba(247,244,239,0.7); margin-top: 28px; }
 .cta-section .btn { margin-top: 52px; }
 
 .offer-subtitle {
